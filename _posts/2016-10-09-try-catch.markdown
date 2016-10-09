@@ -14,20 +14,20 @@ tags:
 
 	1. 	[NSKeyedUnarchiver unarchiveObjectWithFile:path]
       	[NSKeyedArchiver archiveRootObject:metadata toFile:[self cacheMetadataFilePath]];
-## 
+##
 	// Try to resume with resumeData.
 	// Even though we try to validate the resumeData, this may still fail and raise 	excecption.
 	2.	 [self.session downloadTaskWithResumeData:resumeData]
-##   
+##
 	//It is an error to call removeObserver:forKeyPath: for an object that has not previously been registered as an observer.
 	3.	[object removeObserver:self forKeyPath:NSStringFromSelector(@selector(state))];
-##   
+##
 	4.  [dict valueForKeyPath:transformedName];
   	 	[self setValue:value forKey:propertyMeta->_name]
-##    
+##
  	//If obj will not produce valid JSON, an exception is thrown.
 	5.  [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:&jsonError];
  
-##  
+##       
 	// This method raises an exception if the file descriptor is closed or is not valid, if the receiver represents an unconnected pipe or socket endpoint, if no free space is left on the file system, or if any other writing error occurs.
 	6. [[self currentLogFileHandle] writeData:logData] ( NSFileHandle)
