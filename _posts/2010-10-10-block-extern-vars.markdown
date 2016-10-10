@@ -11,13 +11,13 @@ tags:
 ---
 
 	int main() {
-    	int i = 2;
-   	 	NSNumber *num = @3;
-    	long (^myBlock)(void) = ^long() {
-        	return i * num.intValue;
-    	};
-    	myBlock();
-    	return 0;
+    int i = 2;
+   	 NSNumber *num = @3;
+    long (^myBlock)(void) = ^long() {
+        return i * num.intValue;
+    };
+    myBlock();
+    return 0;
 	}
 	
 ##### block的结构体
@@ -29,13 +29,13 @@ tags:
      *  _NSConcreteMallocBlock,保存在堆中的 block，当引用计数为 0 时会被销毁.
      *  当一个 block 被 copy 的时候，才会将这个 block 复制到堆
      */
-  	void *isa;
-    //block 的负载信息（引用计数和类型信息）
-  	int Flags;
-    //保留变量
-  	int Reserved;
-    //指向 block 函数地址的指针
-  	void *FuncPtr;
+  void *isa;
+   //block 的负载信息（引用计数和类型信息）
+  int Flags;
+   //保留变量
+  int Reserved;
+   //指向 block 函数地址的指针
+  void *FuncPtr;
 	};
 
 #####  block的数据结构
@@ -77,11 +77,11 @@ tags:
 &ensp;
 
 	int main() {
-    	int i = 2;
-    	NSNumber *num = ((NSNumber *(*)(Class, SEL, int))(void *)objc_msgSend)(objc_getClass("NSNumber"), sel_registerName("numberWithInt:"), 3);
-    	//block声明
-    	long (*myBlock)(void) = ((long (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, i, num, 570425344));
-    	//block调用
-    	((long (*)(__block_impl *))((__block_impl *)myBlock)->FuncPtr)((__block_impl *)myBlock);
-    	return 0;
+    int i = 2;
+    NSNumber *num = ((NSNumber *(*)(Class, SEL, int))(void *)objc_msgSend)(objc_getClass("NSNumber"), sel_registerName("numberWithInt:"), 3);
+    //block声明
+    long (*myBlock)(void) = ((long (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, i, num, 570425344));
+    //block调用
+    ((long (*)(__block_impl *))((__block_impl *)myBlock)->FuncPtr)((__block_impl *)myBlock);
+    return 0;
 	}
