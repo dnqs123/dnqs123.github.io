@@ -10,15 +10,14 @@ tags:
     - iOS开发
 ---
 
-# 需要用@try捕获异常的地方
 
-## 	1.
+### 	1.
 
 	[NSKeyedUnarchiver unarchiveObjectWithFile:path]
     [NSKeyedArchiver archiveRootObject:metadata toFile:[self cacheMetadataFilePath]];
       	
       	
-##  2.
+###  2.
 
 	// Try to resume with resumeData.
 	// Even though we try to validate the resumeData, 
@@ -27,7 +26,7 @@ tags:
 	[self.session downloadTaskWithResumeData:resumeData]
 	
 	
-##		3.
+###	3.
 
 	//It is an error to call removeObserver:forKeyPath: for an object 
 	//that has not previously been registered as an observer.
@@ -35,20 +34,20 @@ tags:
 	object removeObserver:self forKeyPath:NSStringFromSelector(@selector(state))];
 	
 	
-##		4.
+###	4.
 
 	[dict valueForKeyPath:transformedName];
 	[self setValue:value forKey:propertyMeta->_name]
 		
   	 	
-##		5.
+###	5.
 
 	//If obj will not produce valid JSON, an exception is thrown.
 	
 	[NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:&jsonError];
 	
  
-##		6.
+###	6.
 
 	// This method raises an exception if the file descriptor is closed or is not valid, 
 	//if the receiver represents an unconnected pipe or socket endpoint, 
