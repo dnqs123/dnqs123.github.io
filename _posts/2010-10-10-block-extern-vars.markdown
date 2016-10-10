@@ -29,13 +29,13 @@ tags:
      *  _NSConcreteMallocBlock,保存在堆中的 block，当引用计数为 0 时会被销毁.
      *  当一个 block 被 copy 的时候，才会将这个 block 复制到堆
      */
-  void *isa;
-   //block 的负载信息（引用计数和类型信息）
-  int Flags;
-   //保留变量
-  int Reserved;
-   //指向 block 函数地址的指针
-  void *FuncPtr;
+  	void *isa;
+  	//block 的负载信息（引用计数和类型信息）
+  	int Flags;
+   	//保留变量
+  	int Reserved;
+   	//指向 block 函数地址的指针
+  	void *FuncPtr;
 	};
 
 #####  block的数据结构
@@ -74,7 +74,7 @@ tags:
     void (*dispose)(struct __main_block_impl_0*);
 	} __main_block_desc_0_DATA = { 0, sizeof(struct __main_block_impl_0), __main_block_copy_0, __main_block_dispose_0};
 
-&ensp;
+&emsp;
 
 	int main() {
     int i = 2;
