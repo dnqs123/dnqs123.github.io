@@ -17,7 +17,7 @@ tags:
     [NSKeyedArchiver archiveRootObject:metadata toFile:[self cacheMetadataFilePath]];
       	
       	
-###  2.
+###  
 
 	// Try to resume with resumeData.
 	// Even though we try to validate the resumeData, 
@@ -26,7 +26,7 @@ tags:
 	[self.session downloadTaskWithResumeData:resumeData]
 	
 	
-###	3.
+###	
 
 	//It is an error to call removeObserver:forKeyPath: for an object 
 	//that has not previously been registered as an observer.
