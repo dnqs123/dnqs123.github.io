@@ -11,16 +11,16 @@ tags:
 ---
 
 	int main() {
-    int i = 2;
-    NSNumber *num = @3;
-    long (^myBlock)(void) = ^long() {
-        return i * num.intValue;
-    };
-    myBlock();
-    return 0;
+    	int i = 2;
+   	 	NSNumber *num = @3;
+    	long (^myBlock)(void) = ^long() {
+        	return i * num.intValue;
+    	};
+    	myBlock();
+    	return 0;
 	}
 	
-&ensp;
+##### block的结构体
 
 	struct __block_impl {
      /*  isa指针,非GC模式下有三种类型:
@@ -38,7 +38,8 @@ tags:
   	void *FuncPtr;
 	};
 
-	//block的数据结构
+#####  block的数据结构
+
 	struct __main_block_impl_0 {
     struct __block_impl impl;
     struct __main_block_desc_0* Desc;
@@ -53,7 +54,8 @@ tags:
     }
 	};
 
-	//block中的方法
+##### block中的方法
+
 	static long __main_block_func_0(struct __main_block_impl_0 *__cself) {
     int i = __cself->i; // bound by copy
     NSNumber *num = __cself->num; // bound by copy
@@ -64,7 +66,7 @@ tags:
 
 	static void __main_block_dispose_0(struct __main_block_impl_0*src) {_Block_object_dispose((void*)src->num, 3/*BLOCK_FIELD_IS_OBJECT*/);}
 
-	//block数据结构的描述
+##### block数据结构的描述
 	static struct __main_block_desc_0 {
     size_t reserved;
     size_t Block_size;
@@ -72,12 +74,14 @@ tags:
     void (*dispose)(struct __main_block_impl_0*);
 	} __main_block_desc_0_DATA = { 0, sizeof(struct __main_block_impl_0), __main_block_copy_0, __main_block_dispose_0};
 
+&ensp;
+
 	int main() {
-    int i = 2;
-    NSNumber *num = ((NSNumber *(*)(Class, SEL, int))(void *)objc_msgSend)(objc_getClass("NSNumber"), sel_registerName("numberWithInt:"), 3);
-    //block声明
-    long (*myBlock)(void) = ((long (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, i, num, 570425344));
-    //block调用
-    ((long (*)(__block_impl *))((__block_impl *)myBlock)->FuncPtr)((__block_impl *)myBlock);
-    return 0;
+    	int i = 2;
+    	NSNumber *num = ((NSNumber *(*)(Class, SEL, int))(void *)objc_msgSend)(objc_getClass("NSNumber"), sel_registerName("numberWithInt:"), 3);
+    	//block声明
+    	long (*myBlock)(void) = ((long (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, i, num, 570425344));
+    	//block调用
+    	((long (*)(__block_impl *))((__block_impl *)myBlock)->FuncPtr)((__block_impl *)myBlock);
+    	return 0;
 	}
