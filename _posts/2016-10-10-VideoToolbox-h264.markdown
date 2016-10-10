@@ -31,10 +31,8 @@ tags:
 * kVTCompressionPropertyKey_AverageBitRate
 // 码率,均值,单位是byte
 
-&ensp;
-
-	VTCompressionSessionPrepareToEncodeFrames(compressSession);
-
+##### 开始编码			
+		VTCompressionSessionPrepareToEncodeFrames(compressSession);
 
 ##### 传入编码帧
 	frameCount++;
@@ -53,6 +51,7 @@ tags:
 	static void VideoCompressonOutputCallback(void * VTref,void * CM_NULLABLE VTFrameRef,OSStatus status,VTEncodeInfoFlags infoFlags,CM_NULLABLE CMSampleBufferRef sampleBuffer) {}
 	
 ##### 关键帧过去SPS和PPS,保存在h264文件开头即可
+
 ![Mou icon](https://raw.githubusercontent.com/dnqs123/dnqs123.github.io/master/postimage/post-img-VideoToolbox-h264-01)
 	
 ##### 写入数据
