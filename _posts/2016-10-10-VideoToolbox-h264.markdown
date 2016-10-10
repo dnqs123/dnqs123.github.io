@@ -20,7 +20,7 @@ tags:
 
 * kVTCompressionPropertyKey_RealTime
 // 实时编码输出，降低编码延迟
-* kVTCompressionPropertyKey_ProfileLevel kVTProfileLevel_H264_Baseline_AutoLevel
+* kVTCompressionPropertyKey_ProfileLevel      kVTProfileLevel_H264_Baseline_AutoLevel
 // h264 profile, 直播一般使用baseline，可减少由于b帧带来的延时
 * kVTCompressionPropertyKey_MaxKeyFrameInterval
 // 关键帧间隔，GOPsize
@@ -32,7 +32,7 @@ tags:
 // 码率,均值,单位是byte
 
 ##### 开始编码			
-		VTCompressionSessionPrepareToEncodeFrames(compressSession);
+	VTCompressionSessionPrepareToEncodeFrames(compressSession);
 
 ##### 传入编码帧
 	frameCount++;
