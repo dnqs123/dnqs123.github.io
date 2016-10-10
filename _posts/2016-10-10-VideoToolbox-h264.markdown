@@ -15,6 +15,7 @@ tags:
 	VTCompressionSessionRef compressSession;
 	OSStatus status = VTCompressionSessionCreate(NULL, 480, 640, kCMVideoCodecType_H264, NULL, NULL, NULL, 
 	VideoCompressonOutputCallback, (__bridge void *)self ,&compressSession);
+	
 ##### 用VTSessionSetProperty设置参数
 
 * kVTCompressionPropertyKey_RealTime
@@ -30,7 +31,10 @@ tags:
 * kVTCompressionPropertyKey_AverageBitRate
 // 码率,均值,单位是byte
 
-		VTCompressionSessionPrepareToEncodeFrames(compressSession);
+&ensp;
+
+	VTCompressionSessionPrepareToEncodeFrames(compressSession);
+
 
 ##### 传入编码帧
 	frameCount++;
@@ -49,7 +53,7 @@ tags:
 	static void VideoCompressonOutputCallback(void * VTref,void * CM_NULLABLE VTFrameRef,OSStatus status,VTEncodeInfoFlags infoFlags,CM_NULLABLE CMSampleBufferRef sampleBuffer) {}
 	
 ##### 关键帧过去SPS和PPS,保存在h264文件开头即可
-![Mou icon](https://github.com/dnqs123/dnqs123.github.io/postimage/post-img-VideoToolbox-h264-01.jpg)
+![Mou icon](https://raw.githubusercontent.com/dnqs123/dnqs123.github.io/master/postimage/post-img-VideoToolbox-h264-01)
 	
 ##### 写入数据
-![Mou icon](https://github.com/dnqs123/dnqs123.github.io/postimage/post-img-VideoToolbox-h264-02.jpg)
+![Mou icon](https://raw.githubusercontent.com/dnqs123/dnqs123.github.io/master/postimage/post-img-VideoToolbox-h264-02)
