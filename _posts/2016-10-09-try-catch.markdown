@@ -10,12 +10,12 @@ tags:
     - iOS开发
 ---
 
-&ensp;
+###### NSKeyedArchiver
 
 	[NSKeyedUnarchiver unarchiveObjectWithFile:path]
     [NSKeyedArchiver archiveRootObject:metadata toFile:[self cacheMetadataFilePath]];
       	
-&ensp;   
+###### downloadTaskWithResumeData
 
 	// Try to resume with resumeData.
 	// Even though we try to validate the resumeData, 
@@ -23,25 +23,25 @@ tags:
 	
 	[self.session downloadTaskWithResumeData:resumeData]
 	
-&ensp;
+###### removeObserver
 
 	//It is an error to call removeObserver:forKeyPath: for an object 
 	//that has not previously been registered as an observer.
 	
 	object removeObserver:self forKeyPath:NSStringFromSelector(@selector(state))];
 	
-&ensp;
+###### valueForKeyPath
 
 	[dict valueForKeyPath:transformedName];
 	[self setValue:value forKey:propertyMeta->_name]
 		
-&ensp;
+###### NSJSONSerialization
 
 	//If obj will not produce valid JSON, an exception is thrown.
 	
 	[NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:&jsonError];
 	
-&ensp;
+###### NSFileHandle
 
 	// This method raises an exception if the file descriptor is closed or is not valid, 
 	//if the receiver represents an unconnected pipe or socket endpoint, 
