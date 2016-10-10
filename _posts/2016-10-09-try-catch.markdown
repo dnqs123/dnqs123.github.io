@@ -21,13 +21,15 @@ tags:
 ##  2.
 
 	// Try to resume with resumeData.
-	// Even though we try to validate the resumeData, this may still fail and raise 	excecption.
+	// Even though we try to validate the resumeData, 
+	// this may still fail and raise excecption.
 	[self.session downloadTaskWithResumeData:resumeData]
 	
 	
 ##		3.
 
-	//It is an error to call removeObserver:forKeyPath: for an object that has not previously been registered as an observer.
+	//It is an error to call removeObserver:forKeyPath: for an object 
+	//that has not previously been registered as an observer.
 	object removeObserver:self forKeyPath:NSStringFromSelector(@selector(state))];
 	
 	
@@ -45,7 +47,9 @@ tags:
  
 ##		6.
 
-	// This method raises an exception if the file descriptor is closed or is not valid, if the receiver represents an unconnected pipe or socket endpoint, if no free space is left on the file system, or if any other writing error occurs.
+	// This method raises an exception if the file descriptor is closed or is not valid, 
+	//if the receiver represents an unconnected pipe or socket endpoint, if no free space is left on the file system, 
+	//or if any other writing error occurs.
 	[[self currentLogFileHandle] writeData:logData] ( NSFileHandle)
 	
 	
