@@ -25,4 +25,8 @@ tags:
    
     //va_end(args)：清空参数列表，并置参数指针args无效
     va_end(args);
-}
+	}
+	
+	
+	
+	
