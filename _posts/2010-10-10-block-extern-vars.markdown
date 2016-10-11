@@ -12,7 +12,7 @@ tags:
 
 	int main() {
     int i = 2;
-   	 NSNumber *num = @3;
+   	NSNumber *num = @3;
     long (^myBlock)(void) = ^long() {
         return i * num.intValue;
     };
